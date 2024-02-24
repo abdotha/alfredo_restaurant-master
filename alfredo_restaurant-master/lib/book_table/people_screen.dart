@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 var mesg = 'test';
 var mesg2 = 'test2';
 var iconin = Icons.task_alt;
-var iconColor = 0xFFFFA500;
+var iconColor = 0xFF66BB6A12;
 var adultColor = 0xFF000000;
 var timeColor = 0xFF000000;
 
@@ -267,7 +267,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                       mesg = 'Booking confirmed';
                       mesg2 = 'See you soon';
                       iconin = Icons.task_alt;
-                      iconColor = 0xFFFFA500;
+                      iconColor = 0xff4caf50;
                       adultColor = 0xFF000000;
                       timeColor = 0xFF000000;
                     }

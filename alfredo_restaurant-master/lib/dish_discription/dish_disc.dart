@@ -87,12 +87,18 @@ class _DishDescriptionState extends State<DishDescription> {
           const SizedBox(
             height: 85,
           ),
-          Text(
-            widget.dishName,
-            style: GoogleFonts.labrada(
-              color: Colors.black,
-              fontSize: 28,
-              fontWeight: FontWeight.w600,
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+
+              child: Text(
+                widget.dishName,
+                style: GoogleFonts.labrada(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
           const SizedBox(
