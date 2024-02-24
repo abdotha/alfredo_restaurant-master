@@ -197,10 +197,11 @@ class _TimeBookingState extends State<TimeBooking> {
                   onPressed: () {
                     setState(() {
                       for (int i = 0; i < 10; i++) {
-                        if (i != 2)
+                        if (i != 2) {
                           lunchArray[i] = 0xffffffff;
-                        else
+                        } else {
                           lunchArray[i] = 0xffBBD4CE;
+                        }
                         timeBook = 4;
                       }
                     });
@@ -218,10 +219,11 @@ class _TimeBookingState extends State<TimeBooking> {
                   onPressed: () {
                     setState(() {
                       for (int i = 0; i < 10; i++) {
-                        if (i != 3)
+                        if (i != 3) {
                           lunchArray[i] = 0xffffffff;
-                        else
+                        } else {
                           lunchArray[i] = 0xffBBD4CE;
+                        }
                         timeBook = 5;
                       }
                     });
@@ -251,10 +253,11 @@ class _TimeBookingState extends State<TimeBooking> {
                     onPressed: () {
                       setState(() {
                         for (int i = 0; i < 10; i++) {
-                          if (i != 4)
+                          if (i != 4) {
                             lunchArray[i] = 0xffffffff;
-                          else
+                          } else {
                             lunchArray[i] = 0xffBBD4CE;
+                          }
                           timeBook = 7;
                         }
                       });
@@ -271,10 +274,11 @@ class _TimeBookingState extends State<TimeBooking> {
                     onPressed: () {
                       setState(() {
                         for (int i = 0; i < 10; i++) {
-                          if (i != 5)
+                          if (i != 5) {
                             lunchArray[i] = 0xffffffff;
-                          else
+                          } else {
                             lunchArray[i] = 0xffBBD4CE;
+                          }
                           timeBook = 8;
                         }
                       });
@@ -291,10 +295,11 @@ class _TimeBookingState extends State<TimeBooking> {
                   onPressed: () {
                     setState(() {
                       for (int i = 0; i < 10; i++) {
-                        if (i != 6)
+                        if (i != 6) {
                           lunchArray[i] = 0xffffffff;
-                        else
+                        } else {
                           lunchArray[i] = 0xffBBD4CE;
+                        }
                         timeBook = 9;
                       }
                     });
@@ -312,10 +317,11 @@ class _TimeBookingState extends State<TimeBooking> {
                     onPressed: () {
                       setState(() {
                         for (int i = 0; i < 10; i++) {
-                          if (i != 7)
+                          if (i != 7) {
                             lunchArray[i] = 0xffffffff;
-                          else
+                          } else {
                             lunchArray[i] = 0xffBBD4CE;
+                          }
                           timeBook = 10;
                         }
                       });
@@ -340,10 +346,11 @@ class _TimeBookingState extends State<TimeBooking> {
                     onPressed: () {
                       setState(() {
                         for (int i = 0; i < 10; i++) {
-                          if (i != 8)
+                          if (i != 8) {
                             lunchArray[i] = 0xffffffff;
-                          else
+                          } else {
                             lunchArray[i] = 0xffBBD4CE;
+                          }
                           timeBook = 11;
                         }
                       });
@@ -360,10 +367,11 @@ class _TimeBookingState extends State<TimeBooking> {
                     onPressed: () {
                       setState(() {
                         for (int i = 0; i < 10; i++) {
-                          if (i != 9)
+                          if (i != 9) {
                             lunchArray[i] = 0xffffffff;
-                          else
+                          } else {
                             lunchArray[i] = 0xffBBD4CE;
+                          }
                           timeBook = 12;
                         }
                       });
@@ -407,7 +415,7 @@ class _TimeBookingState extends State<TimeBooking> {
                 child: const Text("Next"),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
           ],

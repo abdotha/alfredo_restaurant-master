@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 double totalPrice = 0;
 
+List dishNumList = [];
+
 class DishDescription extends StatefulWidget {
   const DishDescription({
     super.key,
@@ -171,6 +173,7 @@ class _DishDescriptionState extends State<DishDescription> {
             height: 50,
             child: ElevatedButton(
               onPressed: () {
+                dishNumList.add([widget.index,dishNumber]);
                 setState(() {
                   cart.add(dishDisc[widget.index]);
                   totalPrice += (dishNumber * widget.price);
@@ -216,7 +219,7 @@ class _DishDescriptionState extends State<DishDescription> {
               ),
             ),
           ),
-          SizedBox(height: 20,)
+          const SizedBox(height: 20,)
         ],
       ),
     );

@@ -16,9 +16,11 @@ class OrderView extends StatefulWidget {
 }
 
 class _OrderViewState extends State<OrderView> {
-  double updateTotalPrice(double price) {
+  double updateTotalPrice(double price,int index) {
+
     setState(() {
-      totalPrice -= price;
+      totalPrice -= price*dishNumList[index][1];
+      dishNumList.removeAt(index);
     });
     return totalPrice;
   }
@@ -37,16 +39,22 @@ class _OrderViewState extends State<OrderView> {
             () {
               double dismissedItemPrice = cart[index]['dishPrice'];
               cart.removeAt(index);
-              totalPrice = updateTotalPrice(dismissedItemPrice);
+              totalPrice = updateTotalPrice(dismissedItemPrice,index);
             },
           );
         },
         child: ListTile(
+          trailing: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('X${dishNumList[index][1]}',),
+            ],
+          ),
          onTap:() {
            Navigator.push(
              context,
              MaterialPageRoute(
-               builder: (context) => DescriptionScreen(index: index),
+               builder: (context) => DescriptionScreen(index: dishNumList[index][0]),
              ),
            );
          },

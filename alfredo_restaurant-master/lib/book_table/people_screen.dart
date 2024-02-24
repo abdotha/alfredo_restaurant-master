@@ -431,7 +431,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                 child: const Text("Confirm"),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
           ],
