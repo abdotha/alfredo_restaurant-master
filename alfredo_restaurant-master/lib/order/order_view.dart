@@ -99,7 +99,7 @@ class _TotalPriceShowState extends State<TotalPriceShow> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 130,
       width: 260,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
