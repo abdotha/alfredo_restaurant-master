@@ -47,7 +47,10 @@ class _OrderViewState extends State<OrderView> {
           trailing: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('X${dishNumList[index][1]}',),
+
+              Text('X${dishNumList[index][1]}',
+              style: TextStyle(fontSize: 15,
+              color: Colors.grey),),
             ],
           ),
          onTap:() {
@@ -99,7 +102,7 @@ class _TotalPriceShowState extends State<TotalPriceShow> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 140,
+      height: 130,
       width: 260,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
