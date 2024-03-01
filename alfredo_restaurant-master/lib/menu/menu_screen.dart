@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/model.dart';
-
+import 'package:alfredo_restaurant/menu/menu_data.dart';
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
 
@@ -16,9 +16,12 @@ class _MenuScreenState extends State<MenuScreen> {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: themeIcon == Icons.light_mode
+            ? const Color(0xffffffff)
+            : const Color(0xff303030),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
+            icon: Icon(Icons.menu_book,),
             label: 'Menu',
           ),
           BottomNavigationBarItem(
@@ -27,7 +30,7 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
         ],
         selectedItemColor: const Color(0xffBBD4CE),
-        unselectedItemColor: Colors.black,
+        unselectedItemColor: Color(textColor),
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {

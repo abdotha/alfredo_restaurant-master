@@ -1,8 +1,10 @@
 import 'package:alfredo_restaurant/book_table/time_screen.dart';
+import 'package:alfredo_restaurant/models/model.dart';
 import 'package:alfredo_restaurant/models/splash_screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:alfredo_restaurant/menu/menu_data.dart';
+import 'package:alfredo_restaurant/dish_discription/dish_disc.dart';
 var mesg = 'test';
 var mesg2 = 'test2';
 var iconin = Icons.task_alt;
@@ -21,6 +23,9 @@ class _PeopleBookingState extends State<PeopleBooking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: themeIcon == Icons.light_mode
+          ? const Color(0xffffffff)
+          : const Color(0xff303030),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -130,7 +135,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
               child: Text(
                 'Book a table',
                 style: GoogleFonts.labrada(
-                  color: Colors.black,
+                  color: Color(textColor),
                   fontSize: 38,
                   fontWeight: FontWeight.w600,
                 ),
@@ -139,9 +144,10 @@ class _PeopleBookingState extends State<PeopleBooking> {
             const SizedBox(
               height: 50,
             ),
-            const Center(
+             Center(
               child: Text('Adult',
                   style: TextStyle(
+                    color: Color(textColor),
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   )),
@@ -164,7 +170,8 @@ class _PeopleBookingState extends State<PeopleBooking> {
                 ),
                 Text(
                   '$adultNum',
-                  style: const TextStyle(
+                  style:  TextStyle(
+                    color: Color(textColor),
                     fontSize: 50,
                   ),
                 ),
@@ -185,9 +192,10 @@ class _PeopleBookingState extends State<PeopleBooking> {
             const SizedBox(
               height: 50,
             ),
-            const Center(
+             Center(
               child: Text('Children',
                   style: TextStyle(
+                    color: Color(textColor),
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   )),
@@ -209,7 +217,8 @@ class _PeopleBookingState extends State<PeopleBooking> {
                   },
                 ),
                 Text('$childNum',
-                    style: const TextStyle(
+                    style:  TextStyle(
+                      color: Color(textColor),
                       fontSize: 50,
                     )),
                 FloatingActionButton(
@@ -252,7 +261,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                     iconin = Icons.priority_high;
                     iconColor = 0xFFFF0000;
                     timeColor = 0xFFFF0000;
-                    adultColor = 0xFF000000;
+                    adultColor = textColor;
                     f = true;
                   } else {
                     if (adultNum <= 0) {
@@ -261,15 +270,15 @@ class _PeopleBookingState extends State<PeopleBooking> {
                       iconin = Icons.priority_high;
                       iconColor = 0xFFFF0000;
                       adultColor = 0xFFFF0000;
-                      timeColor = 0xFF000000;
+                      timeColor = textColor;
                       f = true;
                     } else {
                       mesg = 'Booking confirmed';
                       mesg2 = 'See you soon';
                       iconin = Icons.task_alt;
                       iconColor = 0xff4caf50;
-                      adultColor = 0xFF000000;
-                      timeColor = 0xFF000000;
+                      adultColor = textColor;
+                      timeColor = textColor;
                     }
                   }
 // When the button is pressed, show the dialog
@@ -278,6 +287,9 @@ class _PeopleBookingState extends State<PeopleBooking> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
+                        backgroundColor: themeIcon == Icons.light_mode
+                            ? const Color(0xffffffff)
+                            : const Color(0xff303030),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -294,7 +306,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                             Text(
                               mesg,
                               style: GoogleFonts.labrada(
-                                color: Colors.black,
+                                color: Color(textColor),
                                 fontSize: 25,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -308,7 +320,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                               Text(
                                 mesg2,
                                 style: GoogleFonts.labrada(
-                                  color: Colors.black,
+                                  color: Color(textColor),
                                   fontSize: 25,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -323,8 +335,9 @@ class _PeopleBookingState extends State<PeopleBooking> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Icon(
+                                   Icon(
                                     Icons.schedule,
+                                    color: Color(textColor),
                                   ),
                                   const SizedBox(
                                     width: 4,
@@ -340,8 +353,9 @@ class _PeopleBookingState extends State<PeopleBooking> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Icon(
+                                   Icon(
                                     Icons.person,
+                                    color: Color(textColor),
                                   ),
                                   const SizedBox(
                                     width: 4,
@@ -352,30 +366,39 @@ class _PeopleBookingState extends State<PeopleBooking> {
                                         color: Color(adultColor),
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const Text(
+                                   Text(
                                     ':person',
+                                    style: TextStyle(
+                                      color: Color(textColor),
+                                    ),
                                   ),
                                   const SizedBox(
                                     width: 5,
                                   ),
-                                  const Text(
+                                   Text(
                                     '.',
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle( color: Color(textColor),
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   const SizedBox(
                                     width: 5,
                                   ),
-                                  const Icon(Icons.child_care),
+                                   Icon(Icons.child_care,
+                                    color: Color(textColor),),
                                   const SizedBox(
                                     width: 4,
                                   ),
                                   Text(
                                     '$childNum ',
-                                    style: const TextStyle(
+                                    style:  TextStyle(
+                                        color: Color(textColor),
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const Text(
+                                   Text(
                                     ':kids',
+                                    style: TextStyle(
+                                      color: Color(textColor),
+                                    )
                                   ),
                                 ],
                               )
@@ -411,11 +434,14 @@ class _PeopleBookingState extends State<PeopleBooking> {
                                     adultNum = 0;
                                     childNum = 0;
                                     timeBook = 0;
+                                    dishNumList.clear();
+                                    cart.clear();
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
                                               const SplashScreen2(),
+
                                         ));
                                   }
                                 },

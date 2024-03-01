@@ -1,7 +1,7 @@
 import 'package:alfredo_restaurant/book_table/people_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:alfredo_restaurant/menu/menu_data.dart';
 int timeBook = 0;
 int dinnerBook = 0;
 var x = 0xffBBDfff;
@@ -32,7 +32,9 @@ class _TimeBookingState extends State<TimeBooking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: themeIcon == Icons.light_mode
+          ? const Color(0xffffffff)
+          : const Color(0xff303030),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -129,7 +131,7 @@ class _TimeBookingState extends State<TimeBooking> {
               child: Text(
                 'Book a table',
                 style: GoogleFonts.labrada(
-                  color: Colors.black,
+                  color: Color(textColor),
                   fontSize: 38,
                   fontWeight: FontWeight.w600,
                 ),
@@ -138,9 +140,10 @@ class _TimeBookingState extends State<TimeBooking> {
             const SizedBox(
               height: 50,
             ),
-            const Text(
+             Text(
               'Lunch',
               style: TextStyle(
+                color: Color(textColor),
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -240,9 +243,11 @@ class _TimeBookingState extends State<TimeBooking> {
             const SizedBox(
               height: 50,
             ),
-            const Text(
+             Text(
               'Dinner',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Color(textColor),
+                  fontSize: 30, fontWeight: FontWeight.bold),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

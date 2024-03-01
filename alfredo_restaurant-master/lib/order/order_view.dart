@@ -1,3 +1,4 @@
+import 'package:alfredo_restaurant/menu/menu_data.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,6 +21,7 @@ class _OrderViewState extends State<OrderView> {
 
     setState(() {
       totalPrice -= price*dishNumList[index][1];
+      cart.removeAt(index);
       dishNumList.removeAt(index);
     });
     return totalPrice;
@@ -38,7 +40,6 @@ class _OrderViewState extends State<OrderView> {
           setState(
             () {
               double dismissedItemPrice = cart[index]['dishPrice'];
-              cart.removeAt(index);
               totalPrice = updateTotalPrice(dismissedItemPrice,index);
             },
           );
@@ -49,7 +50,7 @@ class _OrderViewState extends State<OrderView> {
             children: [
 
               Text('X${dishNumList[index][1]}',
-              style: TextStyle(fontSize: 15,
+              style: const TextStyle(fontSize: 15,
               color: Colors.grey),),
             ],
           ),
@@ -75,14 +76,16 @@ class _OrderViewState extends State<OrderView> {
           ),
           title: Text(
             cart[index]['dishName'],
-            style: const TextStyle(
+            style:  TextStyle(
+              color: Color(textColor),
               fontSize: 20,
               fontWeight: FontWeight.w400,
             ),
           ),
           subtitle: Text(
             '${cart[index]['dishPrice']}',
-            style: const TextStyle(
+            style:  TextStyle(
+              color: Color(textColor),
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -160,6 +163,9 @@ class _DialogShowState extends State<DialogShow> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: themeIcon == Icons.light_mode
+          ? const Color(0xffffffff)
+          : const Color(0xff303030),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
@@ -171,7 +177,7 @@ class _DialogShowState extends State<DialogShow> {
       content: Text(
         'Ordered Successfully',
         style: GoogleFonts.labrada(
-          color: Colors.black,
+          color: Color(textColor),
           fontSize: 22,
           fontWeight: FontWeight.w600,
         ),

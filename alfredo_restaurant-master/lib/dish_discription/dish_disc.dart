@@ -1,3 +1,4 @@
+import 'package:alfredo_restaurant/menu/menu_data.dart';
 import 'package:alfredo_restaurant/models/model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -94,7 +95,7 @@ class _DishDescriptionState extends State<DishDescription> {
               child: Text(
                 widget.dishName,
                 style: GoogleFonts.labrada(
-                  color: Colors.black,
+                  color: Color(textColor),
                   fontSize: 25,
                   fontWeight: FontWeight.w600,
                 ),
@@ -136,8 +137,8 @@ class _DishDescriptionState extends State<DishDescription> {
               ),
               Text(
                 '$dishNumber',
-                style: const TextStyle(
-                  color: Colors.black,
+                style:  TextStyle(
+                  color: Color(textColor),
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
@@ -165,10 +166,10 @@ class _DishDescriptionState extends State<DishDescription> {
           ),
           Text(
             '${dishNumber*widget.price} EGP',
-            style: const TextStyle(
+            style:  TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 35,
-              color: Colors.black87,
+              color: Color(textColor),
             ),
           ),
           const SizedBox(

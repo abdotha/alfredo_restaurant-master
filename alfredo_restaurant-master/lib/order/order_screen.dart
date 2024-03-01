@@ -1,7 +1,7 @@
 import 'package:alfredo_restaurant/order/order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:alfredo_restaurant/menu/menu_data.dart';
 import '../models/model.dart';
 
 class OrderScreen extends StatefulWidget {
@@ -14,7 +14,9 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: themeIcon == Icons.light_mode
+          ? const Color(0xffffffff)
+          : const Color(0xff303030),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
