@@ -18,7 +18,7 @@ class _MenuScreenState extends State<MenuScreen> {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: themeIcon == Icons.light_mode
             ? const Color(0xffffffff)
-            : const Color(0xff303030),
+            : const Color(0xff0F0F0F),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book,),

@@ -16,7 +16,7 @@ class _OrderScreenState extends State<OrderScreen> {
     return Scaffold(
       backgroundColor: themeIcon == Icons.light_mode
           ? const Color(0xffffffff)
-          : const Color(0xff303030),
+          : const Color(0xff0F0F0F),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(

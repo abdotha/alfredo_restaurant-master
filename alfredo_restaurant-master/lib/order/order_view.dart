@@ -1,4 +1,5 @@
 import 'package:alfredo_restaurant/menu/menu_data.dart';
+import 'package:alfredo_restaurant/models/splash_screen3%5D.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,6 +42,9 @@ class _OrderViewState extends State<OrderView> {
             () {
               double dismissedItemPrice = cart[index]['dishPrice'];
               totalPrice = updateTotalPrice(dismissedItemPrice,index);
+              // Navigator.pushReplacement(context,
+              //   MaterialPageRoute(builder: (
+              //       context) => const SplashScreen3(),),);
             },
           );
         },
@@ -165,7 +169,7 @@ class _DialogShowState extends State<DialogShow> {
     return AlertDialog(
       backgroundColor: themeIcon == Icons.light_mode
           ? const Color(0xffffffff)
-          : const Color(0xff303030),
+          : const Color(0xff0F0F0F),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),

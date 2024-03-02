@@ -25,12 +25,12 @@ class _PeopleBookingState extends State<PeopleBooking> {
     return Scaffold(
       backgroundColor: themeIcon == Icons.light_mode
           ? const Color(0xffffffff)
-          : const Color(0xff303030),
+          : const Color(0xff0F0F0F),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
-              height: 200,
+              height: 150,
               child: Stack(
                 children: <Widget>[
                   SizedBox(
@@ -71,7 +71,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                         Navigator.pop(context);
                       },
                       icon: const Icon(
-                        Icons.arrow_back_ios,
+                        Icons.arrow_back,
                         color: Colors.white,
                         size: 28,
                       ),
@@ -289,7 +289,7 @@ class _PeopleBookingState extends State<PeopleBooking> {
                       return AlertDialog(
                         backgroundColor: themeIcon == Icons.light_mode
                             ? const Color(0xffffffff)
-                            : const Color(0xff303030),
+                            : const Color(0xff0F0F0F),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
