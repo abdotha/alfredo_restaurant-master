@@ -8,14 +8,14 @@ final List dishDisc = [
     'dishImage': 'images/Chicken Ramen.jpeg',
     'dishName': 'Chicken Ramen',
     'dishDisc':
-        'chicken breasts,  Fresh or dried, cooked, Soy Sauce, Mirin, Garlic and Ginger, Vegetables, Soft-boiled eggs, bamboo shoots, nori (seaweed), corn, and chili oil',
+        'chicken breasts, Fresh or dried,cooked, Soy Sauce, Mirin, Garlic and Ginger, Vegetables, Soft-boiled eggs, bamboo shoots, nori (seaweed), corn, and chili oil',
     'dishPrice': 95.0,
   },
   {
     'dishImage': 'images/Chicken Vegetable Ramen Noodles.jpeg',
     'dishName': 'Chicken Vegetable Noodles',
     'dishDisc':
-        'chicken breasts , Egg noodles, Aromatics like(Garlic, ginger and green onions), soy sauce and  oyster sauce, stir-frying, Vegetables like( carrots, bell peppers, mushrooms, broccoli, and snow peas)',
+        'chicken breasts, Egg noodles, Aromatics like(Garlic, ginger and green onions), soy sauce and  oyster sauce, stir-frying, Vegetables like( carrots, bell peppers, mushrooms, broccoli, and snow peas)',
     'dishPrice': 100.0,
   },
   {
@@ -104,7 +104,7 @@ final List dishDisc = [
   },
   {
     'dishImage': 'images/Spaghetti and Meatballs.jpeg',
-    'dishName': 'Spaghetti and Meatballs',
+    'dishName': 'Spaghetti & Meatballs',
     'dishDisc':
         'Ground beef, Breadcrumbs, Egg, Grated Parmesan cheese, Chopped fresh parsle Spaghetti pasta. ',
     'dishPrice': 100.0,
@@ -120,5 +120,7 @@ final List dishDisc = [
 List<Widget> screens = [
   const MenuData(),
   const OrderScreen(),
+
+
 ];
 final List cart = [];

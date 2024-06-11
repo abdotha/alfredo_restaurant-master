@@ -37,7 +37,7 @@ class _DishDescriptionState extends State<DishDescription> {
             children: [
               Container(
                 width: double.infinity,
-                height: 150,
+                height: 180,
                 decoration: const BoxDecoration(
                   color: Color(0xffBBD4CE),
                   borderRadius: BorderRadius.only(
@@ -68,11 +68,11 @@ class _DishDescriptionState extends State<DishDescription> {
                 ),
               ),
               Positioned(
-                bottom: -70,
-                left: (MediaQuery.of(context).size.width - 150) / 2,
+                bottom: -85,
+                left: (MediaQuery.of(context).size.width - 185) / 2,
                 child: Container(
-                  width: 150,
-                  height: 150,
+                  width: 185,
+                  height: 185,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
@@ -94,6 +94,7 @@ class _DishDescriptionState extends State<DishDescription> {
 
               child: Text(
                 widget.dishName,
+                textAlign: TextAlign.center,
                 style: GoogleFonts.labrada(
                   color: Color(textColor),
                   fontSize: 25,
@@ -107,11 +108,15 @@ class _DishDescriptionState extends State<DishDescription> {
           ),
           SizedBox(
             width: 290,
-            child: Text(
-              widget.description,
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.grey[600],
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                widget.description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.grey[600],
+                ),
               ),
             ),
           ),

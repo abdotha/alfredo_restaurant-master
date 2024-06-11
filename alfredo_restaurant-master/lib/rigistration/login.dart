@@ -223,10 +223,10 @@ bool cheak=false ;
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
                     SizedBox(
-                      width: 390,
+                      width: 350,
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () {
@@ -252,7 +252,7 @@ bool cheak=false ;
                         child: const Text(
                           'Create new account',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.brown,
                             fontSize: 20,
                           ),
                         ),

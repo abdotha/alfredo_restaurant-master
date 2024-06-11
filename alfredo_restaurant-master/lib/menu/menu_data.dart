@@ -43,13 +43,14 @@ class _MenuDataState extends State<MenuData> {
           style: GoogleFonts.labrada(
             color: Colors.black,
             fontSize: 25,
-            letterSpacing: 1,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {
+          IconButton(
+            color: Colors.black,
+              onPressed: () {
             setState(() {
               if(themeIcon==Icons.light_mode) {
                 themeIcon = Icons.dark_mode;
@@ -103,7 +104,7 @@ class _MenuDataState extends State<MenuData> {
                       ),
                     ),
                     Container(
-                      width: 175,
+                      width: 195,
                       height: 175,
                       padding: const EdgeInsets.all(5.0),
                       alignment: Alignment.bottomCenter,
@@ -121,10 +122,10 @@ class _MenuDataState extends State<MenuData> {
                       ),
                       child: Text(
                         dishDisc[index]['dishName'],
-                        style: GoogleFonts.labrada(
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
-                          letterSpacing: 1,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

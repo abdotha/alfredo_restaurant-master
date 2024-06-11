@@ -1,5 +1,3 @@
-import 'package:alfredo_restaurant/menu/menu_screen.dart';
-import 'package:alfredo_restaurant/order/order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 

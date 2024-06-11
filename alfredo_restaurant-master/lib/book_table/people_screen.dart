@@ -319,9 +319,11 @@ class _PeopleBookingState extends State<PeopleBooking> {
                             children: [
                               Text(
                                 mesg2,
-                                style: GoogleFonts.labrada(
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+
                                   color: Color(textColor),
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),

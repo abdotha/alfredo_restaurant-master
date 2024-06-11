@@ -1,5 +1,4 @@
 import 'package:alfredo_restaurant/menu/menu_data.dart';
-import 'package:alfredo_restaurant/models/splash_screen3%5D.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -48,51 +47,66 @@ class _OrderViewState extends State<OrderView> {
             },
           );
         },
-        child: ListTile(
-          trailing: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+        child: Column(
+          children: [
+            SizedBox(height:10),
+            Container(
+              decoration: BoxDecoration(
+                  color: Color(0xffBBD4CE),
+                borderRadius:BorderRadius.all(Radius.circular(10))),
+              child: ListTile(
+                style: ListTileStyle.list,
+                trailing: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
 
-              Text('X${dishNumList[index][1]}',
-              style: const TextStyle(fontSize: 15,
-              color: Colors.grey),),
-            ],
-          ),
-         onTap:() {
-           Navigator.push(
-             context,
-             MaterialPageRoute(
-               builder: (context) => DescriptionScreen(index: dishNumList[index][0]),
-             ),
-           );
-         },
-          leading: Container(
-            width: 90,
-            height: 150,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+                    Text('X${dishNumList[index][1]}',
+                    style: const TextStyle(fontSize: 15,
+                    color: Color(0xEF4D4D50)),),
+                  ],
+                ),
+               onTap:() {
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                     builder: (context) => DescriptionScreen(index: dishNumList[index][0]),
+                   ),
+                 );
+               },
+                leading: Container(
+                  width: 90,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Image(
+                    image: AssetImage(cart[index]['dishImage']),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                title: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    cart[index]['dishName'],
+                    textAlign: TextAlign.center,
+                    style:  TextStyle(
+                      color: Color(textColor),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                subtitle: Text(
+                  '${cart[index]['dishPrice']}',
+                  style:  TextStyle(
+                    color: Color(textColor),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+              ),
             ),
-            child: Image(
-              image: AssetImage(cart[index]['dishImage']),
-              fit: BoxFit.cover,
-            ),
-          ),
-          title: Text(
-            cart[index]['dishName'],
-            style:  TextStyle(
-              color: Color(textColor),
-              fontSize: 20,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          subtitle: Text(
-            '${cart[index]['dishPrice']}',
-            style:  TextStyle(
-              color: Color(textColor),
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          ],
         ),
       ),
     );
@@ -147,7 +161,9 @@ class _TotalPriceShowState extends State<TotalPriceShow> {
                 'Total',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              Text('${totalPrice + 30} EGP'),
+              Text('${totalPrice+30==30
+                  ?  0
+                  : totalPrice+30} EGP'),
             ],
           ),
         ],

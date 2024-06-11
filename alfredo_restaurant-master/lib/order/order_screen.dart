@@ -25,7 +25,7 @@ class _OrderScreenState extends State<OrderScreen> {
               padding: const EdgeInsets.only(bottom: 16),
               alignment: Alignment.bottomLeft,
               width: double.infinity,
-              height: 320,
+              height: 250,
               decoration: const BoxDecoration(
                 color: Color(0xffBBD4CE),
                 borderRadius: BorderRadius.only(
@@ -55,9 +55,22 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
               ),
             ),
+            if(cart.length == 0)
+              Column(
+                children: [
+                  Icon(Icons.error_outline,
+                  color: Colors.amber,
+                  size: 120,),
+                  Text('No Orders Yet !',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.grey,
+                    ),),
+                ],
+              ),
             const OrderView(),
             const SizedBox(
-              height: 70,
+              height: 20,
             ),
             const TotalPriceShow(),
             Padding(

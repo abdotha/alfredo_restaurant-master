@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/model.dart';
-import 'package:alfredo_restaurant/menu/menu_data.dart';
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
 
@@ -15,29 +14,30 @@ class _MenuScreenState extends State<MenuScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: themeIcon == Icons.light_mode
-            ? const Color(0xffffffff)
-            : const Color(0xff0F0F0F),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book,),
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Color(0xffBBD4CE),
+        destinations: [
+          NavigationDestination(
+            icon: Icon(Icons.menu_book,
+            color: Colors.black,),
             label: 'Menu',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag),
+          NavigationDestination(
+            icon: Icon(Icons.shopping_bag,
+          color: Colors.black,),
             label: 'Order',
           ),
         ],
-        selectedItemColor: const Color(0xffBBD4CE),
-        unselectedItemColor: Color(textColor),
-        currentIndex: currentIndex,
-        onTap: (index) {
+        indicatorColor: Colors.white,
+        // unselectedItemColor: Color(textColor),
+        selectedIndex: currentIndex,
+        onDestinationSelected: (index) {
           setState(() {
             currentIndex = index;
           });
         },
       ),
+
     );
   }
 }

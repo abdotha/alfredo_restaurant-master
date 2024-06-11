@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'models/splash_screen.dart';
-
 void main() {
   runApp(const AlfredoRestaurant());
 }
-
 class AlfredoRestaurant extends StatelessWidget {
   const AlfredoRestaurant({super.key});
 
